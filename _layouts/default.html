@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    {% include header.html %}
+    {% if page.header_picture_category %}
+    <link href="/assets/css/{{ page.header_picture_category }}.css" rel="stylesheet">
+    {% endif %}
+  </head>
+  <body>
+    <a href="#content" class="sr-only sr-only-focusable">Перейти к основному содержимому</a>
+
+    <div class="container">
+
+      <div class="blog-header" id="content">
+        {% if page.header_picture_category %}
+        <img src="/media-content/images/{{ page.header_picture_category }}.jpg">
+        {% endif %}
+        <h1 class="blog-title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="lead blog-description">{{ page.subtitle }}</p>
+        {% endif %}
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main" role="main">
+          {{ content }}
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>Оправдание</h4>
+            <p>Исследование мира чувственных ощущений порождаемых гармоническими и, порою, агармоническими колебаниями в простонародии известными под именем музыки. Осторожно, может содержать незначительное количество субъективного мнения, берегите от неокрепших душ.</p>
+            <a href="https://www.google.com/search?q=p3+アイギス&newwindow=1"><img src="/media-content/images/aegis.jpg" alt="Aeigis"></a>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    {% include footer.html %}
+  </body>
+</html>

@@ -1,0 +1,16 @@
+paginate: 7
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "page"
+    values:
+      layout: "default"
+
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "default"
