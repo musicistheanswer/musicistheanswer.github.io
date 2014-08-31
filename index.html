@@ -1,0 +1,49 @@
+---
+title: Музыкальное куртизанство
+subtitle: But you don't really care for music, do you?
+---
+
+          {% for post in paginator.posts %}
+          <div class="blog-post">
+            <h2 class="blog-post-title">{{ post.title }} <a href="{{ post.url }}" class="play"><span class="glyphicon glyphicon-play"></span></a></h2>
+            <p class="blog-post-meta">{{ post.date | date_to_long_string }}</p>
+            {{ post.excerpt }}
+            <br />
+          </div>
+          {% endfor %}
+
+          {% if paginator.total_pages > 1 %}
+          <ul class="pager">
+          {% if paginator.previous_page %}
+            <li>
+              <a href="/" class="previous first"><span class="glyphicon glyphicon-fast-backward"></span></a>
+            </li>
+            <li>
+              <a href="{{ paginator.previous_page_path }}" class="previous"><span class="glyphicon glyphicon-backward"></span></a>
+            </li>
+          {% else %}
+            <li class="disabled">
+              <a href="/" class="previous first"><span class="glyphicon glyphicon-fast-backward"></span></a>
+            </li>
+            <li class="disabled">
+              <a href="#" class="previous"><span class="glyphicon glyphicon-backward"></span></a>
+            </li>
+          {% endif %}
+          <!-- <li><span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span></li> -->
+          {% if paginator.next_page %}
+            <li>
+              <a href="{{ paginator.next_page_path }}" class="next"><span class="glyphicon glyphicon-forward"></span></a>
+            </li>
+            <li>
+              <a href="/page{{ paginator.total_pages }}" class="next last"><span class="glyphicon glyphicon-fast-forward"></span></a>
+            </li>
+          {% else %}
+            <li class="disabled">
+              <a href="#" class="next"><span class="glyphicon glyphicon-forward"></span></a>
+            </li>
+            <li class="disabled">
+              <a href="/page{{ paginator.next_page_path }}" class="next last"><span class="glyphicon glyphicon-fast-forward"></span></a>
+            </li>
+          {% endif %}
+          </ul>
+          {% endif %}
