@@ -15,7 +15,11 @@
         {% if page.header_picture_category %}
         <img src="/media-content/images/{{ page.header_picture_category }}.jpg">
         {% endif %}
+        {% if page.id %}
+        <h1 class="blog-title"><a href="/" class="play"><span class="glyphicon glyphicon-step-backward"></span></a> {{ page.title }}</h1>
+        {% else %}
         <h1 class="blog-title">{{ page.title }}</h1>
+        {% endif %}
         {% if page.subtitle %}
         <p class="lead blog-description">{{ page.subtitle }}</p>
         {% endif %}

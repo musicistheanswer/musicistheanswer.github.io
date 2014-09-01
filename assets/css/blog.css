@@ -144,9 +144,23 @@ h6, .h6 {
 }
 
 .play {
-  padding: 4px 6px 4px;
   background-color: #454545;
   font-size: medium;
+}
+.play > .glyphicon {
+  top: auto;
+}
+h1 > .play {
+  padding: 10px 7px 0px;
+}
+h1 > .play > .glyphicon {
+  bottom: 4px;
+}
+h2 > .play {
+  padding: 8px 7px 2px;
+}
+h2 > .play > .glyphicon {
+  bottom: 2px;
 }
 .play:hover, .play:focus {
   background-color: #aaa;
